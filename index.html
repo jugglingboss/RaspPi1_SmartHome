@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home Automation</title>
+	<link rel="stylesheet" type="text/css"
+	href="web3/style3.css">
+
+	
+</head>
+<body>
+	<script type="text/javascript">
+
+	function test(){
+	var xmlhttp;
+	
+	xmlhttp = new XMLHttpRequest();
+	
+	xmlhttp.onreadystatechange = function(){
+		if (xmlhttp.readyState==4){
+			var text = xmlhttp.responseText
+			var text1 = text.split('.');
+			document.getElementById('ResultMusic').innerHTML = text1[0];
+			document.getElementById('ResultBlinds').innerHTML = text1[1];
+			document.getElementById('ResultTime').innerHTML = text1[2];
+		}
+	
+	}
+	xmlhttp.open("GET","http://jugglingboss.hopto.org/Data.txt",true);
+	xmlhttp.send();
+	
+	setTimeout(test,2000);
+}
+test();
+</script>
+
+	<div class="header">
+		<div class="container">
+			<div class="box1">
+				<h1>Welcome to Home Automation</h1>
+			</div>
+		</div>
+	</div>
+	
+
+	<div class="container">
+		<div class="lowercontainer">
+			<div class="box2">
+				<h2>Bathroom Jams</h2>
+				<div class="play">
+					<a href="PlayMusic.php"> Play Music </a>
+				</div>
+				<div class="stop">
+					<a href="StopMusic.php"> Stop Music </a>
+				</div>
+				<div class "ac">
+					<h2>A/C Control</h2>
+				</div>
+				<div class="air">
+					<a href="Air.php"> On/Off </a>
+				</div>
+				
+				<div class "switch">
+					<h2>Light Switch</h2>
+				</div>
+				<div class="on">
+					<a href="LightsOn.php"> On </a>
+				</div>
+				<div class="off">
+					<a href="LightsOff.php"> Off </a>
+				</div>
+			
+			</div>
+			
+			<div class="blinds">
+				<h2>Sunlight Control</h2>
+				<div class="cycle">
+
+					<div class="full">
+						<a href="BlindsCycle.php"> Full Cycle</a>
+					</div>
+					<div class="up">
+						<a href="BlindsCycle1.php">Sunlight</a>
+					</div>
+					<div class="down">
+						<a href="BlindsCycle2.php">Darkness</a>
+					</div>
+					<div class="form">
+						<form action="alarm.php" method="POST">
+							<div class="alarmtext">
+								<label>Alarm Time</label>
+							</div>
+							<div class="alarmtime">
+								<input id="time" type="time" name="time">
+							</div>	
+							
+						<input id="submit" type="submit" />
+						<form action="alarm.php" method="POST">
+						<input id="submit" type="submit" value="Turn Off" />
+					</div>
+				</div>
+			</div>
+		</div>
+				
+		
+	
+	</div>
+<div class="sidebar">
+	<h3>States</h3>
+		
+	<div id="ResultMusic"></div>
+	<div id="ResultBlinds"></div>	
+	<div id="ResultTime"></div>
+	
+	<input class ="button" type="button" value="Update States" onclick="test()" />
+	
+</div>	
+
+	<footer class="footer">
+		<p>Copyright &copy 2018 Jugglingboss</p>
+	</footer>
+
+</body>
+
+</html>
