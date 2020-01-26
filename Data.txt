@@ -1,3 +1,3 @@
-Music is Off.
-Blinds are Opened.
-09:58
+Music is On.
+Blinds are Closed.
+10:30

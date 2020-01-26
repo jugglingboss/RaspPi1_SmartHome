@@ -4,6 +4,7 @@ import datetime
 import paho.mqtt.publish as publish
 import paho.mqtt.client as mqtt
 
+print("Alarm without Mothion sensor")
 
 while True:
     
@@ -19,9 +20,10 @@ while True:
             x=False
             
 
-
+    #time.sleep(5)
     Alarm = lines[2].split(":")
-    #print(lines[2])
+    #print(Alarm[0])
+    #print(Alarm[1])
     if Alarm[0]=="Off":
         Alarm=["26","99"]
 

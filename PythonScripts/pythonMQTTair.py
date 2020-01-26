@@ -2,7 +2,7 @@ import paho.mqtt.publish as publish
 import paho.mqtt.client as mqtt
 import time
 #print("sending 2...")
-publish.single("Blinds", "4",hostname="localhost")
+publish.single("topic/tv", "AC",hostname="localhost")
 
 
 ##client = mqtt.Client()
